@@ -1,0 +1,1473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B80D073-44F0-4A48-9D00-97296127E74F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestWebAPI</RootNamespace>
+    <AssemblyName>TestWebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44330</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Models\ResponseViewModel.cs" />
+    <Compile Include="Models\Table.cs">
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\User.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>User.Context.cs</LastGenOutput>
+      <DependentUpon>User.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\User.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>User.edmx</DependentUpon>
+      <LastGenOutput>User.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\User.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\User.edmx.diagram">
+      <DependentUpon>User.edmx</DependentUpon>
+    </Content>
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.common.js" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.common.min.js" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.css" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.esm.js" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.esm.min.js" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.js" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.min.css" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.min.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\bv-config.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\alert\alert.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\alert\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\badge\badge.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\badge\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\breadcrumb\breadcrumb-item.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\breadcrumb\breadcrumb-link.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\breadcrumb\breadcrumb.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\breadcrumb\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button-group\button-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button-toolbar\button-toolbar.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button-toolbar\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button\button-close.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button\button.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\button\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-body.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-footer.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-header.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-img-lazy.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-img.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-sub-title.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-text.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card-title.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\card.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\card\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\carousel\carousel-slide.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\carousel\carousel.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\carousel\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\collapse\collapse.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\collapse\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-divider.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-form.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-header.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-item-button.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-item.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown-text.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\dropdown.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\dropdown\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\embed\embed.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\embed\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-checkbox\form-checkbox-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-checkbox\form-checkbox.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-checkbox\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-file\form-file.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-file\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-group\form-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-input\form-input.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-input\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-radio\form-radio-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-radio\form-radio.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-radio\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-select\form-select.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-select\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-textarea\form-textarea.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form-textarea\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form\form-datalist.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form\form-invalid-feedback.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form\form-text.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form\form-valid-feedback.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form\form.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\form\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\image\img-lazy.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\image\img.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\image\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\input-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\input-group\input-group-addon.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\input-group\input-group-append.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\input-group\input-group-prepend.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\input-group\input-group-text.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\input-group\input-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\jumbotron\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\jumbotron\jumbotron.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\layout\col.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\layout\container.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\layout\form-row.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\layout\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\layout\row.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\link\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\link\link.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\list-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\list-group\list-group-item.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\list-group\list-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\media\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\media\media-aside.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\media\media-body.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\media\media.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\modal\helpers\bv-modal-event.class.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\modal\helpers\bv-modal.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\modal\helpers\modal-manager.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\modal\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\modal\modal.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\navbar\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\navbar\navbar-brand.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\navbar\navbar-nav.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\navbar\navbar-toggle.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\navbar\navbar.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\nav\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\nav\nav-form.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\nav\nav-item-dropdown.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\nav\nav-item.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\nav\nav-text.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\nav\nav.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\pagination-nav\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\pagination-nav\pagination-nav.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\pagination\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\pagination\pagination.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\popover\helpers\bv-popover-template.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\popover\helpers\bv-popover.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\popover\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\popover\popover.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\progress\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\progress\progress-bar.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\progress\progress.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\spinner\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\spinner\spinner.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\constants.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\default-sort-compare.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\filter-event.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-bottom-row.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-busy.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-caption.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-colgroup.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-empty.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-filtering.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-items.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-pagination.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-provider.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-selectable.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-sorting.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-stacked.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-table-renderer.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-tbody-row.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-tbody.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-tfoot.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-thead.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\mixin-top-row.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\normalize-fields.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\sanitize-row.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\stringify-object-values.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\stringify-record-values.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\helpers\text-selection-active.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\table-lite.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\table-simple.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\table.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\tbody.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\td.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\tfoot.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\th.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\thead.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\table\tr.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tabs\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tabs\tab.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tabs\tabs.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\toast\helpers\bv-toast.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\toast\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\toast\toast.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\toast\toaster.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tooltip\helpers\bv-popper.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tooltip\helpers\bv-tooltip-template.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tooltip\helpers\bv-tooltip.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tooltip\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\components\tooltip\tooltip.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\modal\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\modal\modal.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\popover\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\popover\popover.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\scrollspy\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\scrollspy\scrollspy.class.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\scrollspy\scrollspy.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\toggle\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\toggle\toggle.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\tooltip\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\tooltip\tooltip.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\directives\visible.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\index.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\card.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\click-out.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\dropdown.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\focus-in.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-custom.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-options.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-radio-check-group.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-radio-check.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-selection.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-size.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-state.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-text.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form-validity.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\form.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\id.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\listen-on-root.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\normalize-slot.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\pagination.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\mixins\scoped-style-attrs.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\array.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\bv-event.class.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\bv-transition.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\clone-deep.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\config-defaults.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\config-set.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\config.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\copy-props.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\dom.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\env.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\get-scope-id.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\get.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\html.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\identity.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\inspect.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\key-codes.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\loose-equal.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\loose-index-of.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\lower-first.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\memoize.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\noop.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\normalize-slot.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\object.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\observe-dom.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\pluck-props.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\plugins.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\prefix-prop-name.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\range.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\router.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\safe-types.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\stable-sort.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\startcase.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\suffix-prop-name.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\target.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\to-string.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\transporter.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\unprefix-prop-name.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\upper-first.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\vue.js" />
+    <Content Include="node_modules\bootstrap-vue\esm\utils\warn.js" />
+    <Content Include="node_modules\bootstrap-vue\nuxt\index.js" />
+    <Content Include="node_modules\bootstrap-vue\nuxt\plugin.template.js" />
+    <Content Include="node_modules\bootstrap-vue\src\browser.js" />
+    <Content Include="node_modules\bootstrap-vue\src\bv-config.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\alert\alert.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\alert\alert.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\alert\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\badge\badge.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\badge\badge.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\badge\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\breadcrumb-item.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\breadcrumb-item.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\breadcrumb-link.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\breadcrumb-link.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\breadcrumb.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\breadcrumb.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-group\button-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-group\button-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-toolbar\button-toolbar.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-toolbar\button-toolbar.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-toolbar\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\button-close.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\button-close.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\button.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\button.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-body.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-body.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-footer.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-footer.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-header.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-header.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-img-lazy.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-img-lazy.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-img.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-img.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-sub-title.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-sub-title.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-text.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-text.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-title.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card-title.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\card.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\carousel-slide.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\carousel-slide.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\carousel.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\carousel.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\collapse\collapse.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\collapse\collapse.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\collapse\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-divider.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-divider.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-form.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-form.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-header.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-header.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-item-button.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-item-button.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-item.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-item.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-text.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown-text.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\dropdown.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\embed\embed.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\embed\embed.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\embed\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\form-checkbox-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\form-checkbox-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\form-checkbox.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\form-checkbox.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\form-file.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\form-file.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-group\form-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-group\form-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\form-input.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\form-input.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\form-radio-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\form-radio-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\form-radio.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\form-radio.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-select\form-select.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-select\form-select.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-select\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-textarea\form-textarea.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-textarea\form-textarea.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-textarea\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-datalist.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-datalist.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-invalid-feedback.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-invalid-feedback.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-text.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-text.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-valid-feedback.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form-valid-feedback.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\form.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\img-lazy.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\img-lazy.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\img.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\img.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-addon.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-append.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-append.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-prepend.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-prepend.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-text.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group-text.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\input-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\jumbotron\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\jumbotron\jumbotron.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\jumbotron\jumbotron.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\col.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\col.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\container.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\container.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\form-row.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\form-row.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\row.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\row.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\link\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\link\link.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\link\link.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\list-group-item.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\list-group-item.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\list-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\list-group.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\media-aside.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\media-aside.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\media-body.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\media-body.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\media.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\media.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\helpers\bv-modal-event.class.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\helpers\bv-modal-event.class.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\helpers\bv-modal.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\helpers\bv-modal.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\helpers\modal-manager.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\modal.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\modal.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar-brand.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar-brand.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar-nav.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar-nav.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar-toggle.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar-toggle.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\navbar.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-form.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-form.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-item-dropdown.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-item-dropdown.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-item.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-item.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-text.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav-text.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\nav.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\pagination-nav.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\pagination-nav.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\pagination.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\pagination.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\helpers\bv-popover-template.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\helpers\bv-popover.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\popover.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\popover.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\progress-bar.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\progress-bar.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\progress.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\progress.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\spinner\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\spinner\spinner.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\spinner\spinner.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\constants.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\default-sort-compare.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\default-sort-compare.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\filter-event.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-bottom-row.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-busy.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-caption.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-colgroup.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-empty.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-filtering.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-items.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-pagination.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-provider.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-selectable.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-sorting.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-stacked.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-table-renderer.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-tbody-row.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-tbody.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-tfoot.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-thead.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\mixin-top-row.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\normalize-fields.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\normalize-fields.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\sanitize-row.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\stringify-object-values.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\stringify-record-values.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\helpers\text-selection-active.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-busy.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-caption.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-colgroup.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-filtering.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-item-formatter.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-lite.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-lite.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-pagination.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-primarykey.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-provider.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-row-details.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-selectable.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-simple.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-simple.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-sorting.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-sticky-column.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-tbody-bottom-row.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-tbody-row-events.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-tbody-top-row.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-tbody-transition.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-tfoot-custom.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-tfoot-events.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-thead-events.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table-thead-top.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\table.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\tbody.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\td.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\tfoot.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\th.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\thead.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\tr.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\tab.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\tab.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\tabs.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\tabs.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\helpers\bv-toast.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\helpers\bv-toast.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\toast.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\toast.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\toaster.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\toaster.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\helpers\bv-popper.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\helpers\bv-tooltip-template.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\helpers\bv-tooltip.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\tooltip.js" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\tooltip.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\modal\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\modal\modal.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\modal\modal.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\popover\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\popover\popover.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\popover\popover.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\scrollspy\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\scrollspy\scrollspy.class.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\scrollspy\scrollspy.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\toggle\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\toggle\toggle.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\toggle\toggle.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\tooltip\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\tooltip\tooltip.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\tooltip\tooltip.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\visible.js" />
+    <Content Include="node_modules\bootstrap-vue\src\index.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\card.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\click-out.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\click-out.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\dropdown.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\focus-in.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\focus-in.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-custom.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-options.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-radio-check-group.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-radio-check.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-selection.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-size.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-state.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-text.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form-validity.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\form.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\id.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\listen-on-root.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\listen-on-root.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\normalize-slot.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\pagination.js" />
+    <Content Include="node_modules\bootstrap-vue\src\mixins\scoped-style-attrs.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\array.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\bv-event.class.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\bv-event.class.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\bv-transition.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\clone-deep.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\clone-deep.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\config-defaults.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\config-defaults.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\config-set.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\config.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\config.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\copy-props.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\copy-props.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\dom.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\dom.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\env.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\get-scope-id.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\get.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\get.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\html.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\identity.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\inspect.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\inspect.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\key-codes.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\loose-equal.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\loose-equal.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\loose-index-of.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\lower-first.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\memoize.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\noop.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\normalize-slot.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\normalize-slot.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\object.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\observe-dom.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\pluck-props.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\plugins.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\prefix-prop-name.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\range.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\router.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\router.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\safe-types.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\stable-sort.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\startcase.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\startcase.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\suffix-prop-name.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\target.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\to-string.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\transporter.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\transporter.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\unprefix-prop-name.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\upper-first.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\upper-first.spec.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\vue.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\warn.js" />
+    <Content Include="node_modules\bootstrap-vue\src\utils\warn.spec.js" />
+    <Content Include="node_modules\requirejs\bin\r.js" />
+    <Content Include="node_modules\requirejs\require.js" />
+    <Content Include="node_modules\vue-class-component\dist\vue-class-component.common.js" />
+    <Content Include="node_modules\vue-class-component\dist\vue-class-component.esm.js" />
+    <Content Include="node_modules\vue-class-component\dist\vue-class-component.js" />
+    <Content Include="node_modules\vue-class-component\dist\vue-class-component.min.js" />
+    <Content Include="node_modules\vue-class-component\lib\component.js" />
+    <Content Include="node_modules\vue-class-component\lib\data.js" />
+    <Content Include="node_modules\vue-class-component\lib\declarations.js" />
+    <Content Include="node_modules\vue-class-component\lib\index.js" />
+    <Content Include="node_modules\vue-class-component\lib\reflect.js" />
+    <Content Include="node_modules\vue-class-component\lib\util.js" />
+    <Content Include="node_modules\vue-property-decorator\lib\vue-property-decorator.js" />
+    <Content Include="node_modules\vue-property-decorator\lib\vue-property-decorator.umd.js" />
+    <Content Include="node_modules\vue\dist\vue.common.dev.js" />
+    <Content Include="node_modules\vue\dist\vue.common.js" />
+    <Content Include="node_modules\vue\dist\vue.common.prod.js" />
+    <Content Include="node_modules\vue\dist\vue.esm.browser.js" />
+    <Content Include="node_modules\vue\dist\vue.esm.browser.min.js" />
+    <Content Include="node_modules\vue\dist\vue.esm.js" />
+    <Content Include="node_modules\vue\dist\vue.js" />
+    <Content Include="node_modules\vue\dist\vue.min.js" />
+    <Content Include="node_modules\vue\dist\vue.runtime.common.dev.js" />
+    <Content Include="node_modules\vue\dist\vue.runtime.common.js" />
+    <Content Include="node_modules\vue\dist\vue.runtime.common.prod.js" />
+    <Content Include="node_modules\vue\dist\vue.runtime.esm.js" />
+    <Content Include="node_modules\vue\dist\vue.runtime.js" />
+    <Content Include="node_modules\vue\dist\vue.runtime.min.js" />
+    <Content Include="node_modules\vue\src\compiler\codeframe.js" />
+    <Content Include="node_modules\vue\src\compiler\codegen\events.js" />
+    <Content Include="node_modules\vue\src\compiler\codegen\index.js" />
+    <Content Include="node_modules\vue\src\compiler\create-compiler.js" />
+    <Content Include="node_modules\vue\src\compiler\directives\bind.js" />
+    <Content Include="node_modules\vue\src\compiler\directives\index.js" />
+    <Content Include="node_modules\vue\src\compiler\directives\model.js" />
+    <Content Include="node_modules\vue\src\compiler\directives\on.js" />
+    <Content Include="node_modules\vue\src\compiler\error-detector.js" />
+    <Content Include="node_modules\vue\src\compiler\helpers.js" />
+    <Content Include="node_modules\vue\src\compiler\index.js" />
+    <Content Include="node_modules\vue\src\compiler\optimizer.js" />
+    <Content Include="node_modules\vue\src\compiler\parser\entity-decoder.js" />
+    <Content Include="node_modules\vue\src\compiler\parser\filter-parser.js" />
+    <Content Include="node_modules\vue\src\compiler\parser\html-parser.js" />
+    <Content Include="node_modules\vue\src\compiler\parser\index.js" />
+    <Content Include="node_modules\vue\src\compiler\parser\text-parser.js" />
+    <Content Include="node_modules\vue\src\compiler\to-function.js" />
+    <Content Include="node_modules\vue\src\core\components\index.js" />
+    <Content Include="node_modules\vue\src\core\components\keep-alive.js" />
+    <Content Include="node_modules\vue\src\core\config.js" />
+    <Content Include="node_modules\vue\src\core\global-api\assets.js" />
+    <Content Include="node_modules\vue\src\core\global-api\extend.js" />
+    <Content Include="node_modules\vue\src\core\global-api\index.js" />
+    <Content Include="node_modules\vue\src\core\global-api\mixin.js" />
+    <Content Include="node_modules\vue\src\core\global-api\use.js" />
+    <Content Include="node_modules\vue\src\core\index.js" />
+    <Content Include="node_modules\vue\src\core\instance\events.js" />
+    <Content Include="node_modules\vue\src\core\instance\index.js" />
+    <Content Include="node_modules\vue\src\core\instance\init.js" />
+    <Content Include="node_modules\vue\src\core\instance\inject.js" />
+    <Content Include="node_modules\vue\src\core\instance\lifecycle.js" />
+    <Content Include="node_modules\vue\src\core\instance\proxy.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\bind-dynamic-keys.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\bind-object-listeners.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\bind-object-props.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\check-keycodes.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\index.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\render-list.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\render-slot.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\render-static.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\resolve-filter.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\resolve-scoped-slots.js" />
+    <Content Include="node_modules\vue\src\core\instance\render-helpers\resolve-slots.js" />
+    <Content Include="node_modules\vue\src\core\instance\render.js" />
+    <Content Include="node_modules\vue\src\core\instance\state.js" />
+    <Content Include="node_modules\vue\src\core\observer\array.js" />
+    <Content Include="node_modules\vue\src\core\observer\dep.js" />
+    <Content Include="node_modules\vue\src\core\observer\index.js" />
+    <Content Include="node_modules\vue\src\core\observer\scheduler.js" />
+    <Content Include="node_modules\vue\src\core\observer\traverse.js" />
+    <Content Include="node_modules\vue\src\core\observer\watcher.js" />
+    <Content Include="node_modules\vue\src\core\util\debug.js" />
+    <Content Include="node_modules\vue\src\core\util\env.js" />
+    <Content Include="node_modules\vue\src\core\util\error.js" />
+    <Content Include="node_modules\vue\src\core\util\index.js" />
+    <Content Include="node_modules\vue\src\core\util\lang.js" />
+    <Content Include="node_modules\vue\src\core\util\next-tick.js" />
+    <Content Include="node_modules\vue\src\core\util\options.js" />
+    <Content Include="node_modules\vue\src\core\util\perf.js" />
+    <Content Include="node_modules\vue\src\core\util\props.js" />
+    <Content Include="node_modules\vue\src\core\vdom\create-component.js" />
+    <Content Include="node_modules\vue\src\core\vdom\create-element.js" />
+    <Content Include="node_modules\vue\src\core\vdom\create-functional-component.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\extract-props.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\get-first-component-child.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\index.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\is-async-placeholder.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\merge-hook.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\normalize-children.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\normalize-scoped-slots.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\resolve-async-component.js" />
+    <Content Include="node_modules\vue\src\core\vdom\helpers\update-listeners.js" />
+    <Content Include="node_modules\vue\src\core\vdom\modules\directives.js" />
+    <Content Include="node_modules\vue\src\core\vdom\modules\index.js" />
+    <Content Include="node_modules\vue\src\core\vdom\modules\ref.js" />
+    <Content Include="node_modules\vue\src\core\vdom\patch.js" />
+    <Content Include="node_modules\vue\src\core\vdom\vnode.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\directives\html.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\directives\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\directives\model.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\directives\text.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\modules\class.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\modules\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\modules\model.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\modules\style.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\options.js" />
+    <Content Include="node_modules\vue\src\platforms\web\compiler\util.js" />
+    <Content Include="node_modules\vue\src\platforms\web\entry-compiler.js" />
+    <Content Include="node_modules\vue\src\platforms\web\entry-runtime-with-compiler.js" />
+    <Content Include="node_modules\vue\src\platforms\web\entry-runtime.js" />
+    <Content Include="node_modules\vue\src\platforms\web\entry-server-basic-renderer.js" />
+    <Content Include="node_modules\vue\src\platforms\web\entry-server-renderer.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\class-util.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\components\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\components\transition-group.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\components\transition.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\directives\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\directives\model.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\directives\show.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\attrs.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\class.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\dom-props.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\events.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\style.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\modules\transition.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\node-ops.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\patch.js" />
+    <Content Include="node_modules\vue\src\platforms\web\runtime\transition-util.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\compiler.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\directives\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\directives\model.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\directives\show.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\modules\attrs.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\modules\class.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\modules\dom-props.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\modules\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\modules\style.js" />
+    <Content Include="node_modules\vue\src\platforms\web\server\util.js" />
+    <Content Include="node_modules\vue\src\platforms\web\util\attrs.js" />
+    <Content Include="node_modules\vue\src\platforms\web\util\class.js" />
+    <Content Include="node_modules\vue\src\platforms\web\util\compat.js" />
+    <Content Include="node_modules\vue\src\platforms\web\util\element.js" />
+    <Content Include="node_modules\vue\src\platforms\web\util\index.js" />
+    <Content Include="node_modules\vue\src\platforms\web\util\style.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\directives\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\directives\model.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\append.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\class.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\props.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\component-root.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\component.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\recycle-list.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\text.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\v-bind.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\v-for.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\v-if.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\v-on.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\recycle-list\v-once.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\modules\style.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\entry-compiler.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\entry-framework.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\entry-runtime-factory.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\components\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\components\richtext.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\components\transition-group.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\components\transition.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\directives\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\modules\attrs.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\modules\class.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\modules\events.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\modules\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\modules\style.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\modules\transition.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\node-ops.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\patch.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\recycle-list\render-component-template.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\recycle-list\virtual-component.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\runtime\text-node.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\util\element.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\util\index.js" />
+    <Content Include="node_modules\vue\src\platforms\weex\util\parser.js" />
+    <Content Include="node_modules\vue\src\server\bundle-renderer\create-bundle-renderer.js" />
+    <Content Include="node_modules\vue\src\server\bundle-renderer\create-bundle-runner.js" />
+    <Content Include="node_modules\vue\src\server\bundle-renderer\source-map-support.js" />
+    <Content Include="node_modules\vue\src\server\create-basic-renderer.js" />
+    <Content Include="node_modules\vue\src\server\create-renderer.js" />
+    <Content Include="node_modules\vue\src\server\optimizing-compiler\codegen.js" />
+    <Content Include="node_modules\vue\src\server\optimizing-compiler\index.js" />
+    <Content Include="node_modules\vue\src\server\optimizing-compiler\modules.js" />
+    <Content Include="node_modules\vue\src\server\optimizing-compiler\optimizer.js" />
+    <Content Include="node_modules\vue\src\server\optimizing-compiler\runtime-helpers.js" />
+    <Content Include="node_modules\vue\src\server\render-context.js" />
+    <Content Include="node_modules\vue\src\server\render-stream.js" />
+    <Content Include="node_modules\vue\src\server\render.js" />
+    <Content Include="node_modules\vue\src\server\template-renderer\create-async-file-mapper.js" />
+    <Content Include="node_modules\vue\src\server\template-renderer\index.js" />
+    <Content Include="node_modules\vue\src\server\template-renderer\parse-template.js" />
+    <Content Include="node_modules\vue\src\server\template-renderer\template-stream.js" />
+    <Content Include="node_modules\vue\src\server\util.js" />
+    <Content Include="node_modules\vue\src\server\webpack-plugin\client.js" />
+    <Content Include="node_modules\vue\src\server\webpack-plugin\server.js" />
+    <Content Include="node_modules\vue\src\server\webpack-plugin\util.js" />
+    <Content Include="node_modules\vue\src\server\write.js" />
+    <Content Include="node_modules\vue\src\sfc\parser.js" />
+    <Content Include="node_modules\vue\src\shared\constants.js" />
+    <Content Include="node_modules\vue\src\shared\util.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="node_modules\requirejs\package.json" />
+    <Content Include="node_modules\requirejs\README.md" />
+    <Content Include="node_modules\vue\dist\README.md" />
+    <Content Include="node_modules\vue\LICENSE" />
+    <Content Include="node_modules\vue\package.json" />
+    <Content Include="node_modules\vue\README.md" />
+    <Content Include="node_modules\vue\src\.DS_Store" />
+    <Content Include="node_modules\vue\src\compiler\.DS_Store" />
+    <Content Include="node_modules\vue\src\platforms\.DS_Store" />
+    <Content Include="node_modules\vue\src\platforms\weex\.DS_Store" />
+    <Content Include="node_modules\vue\src\platforms\weex\compiler\.DS_Store" />
+    <Content Include="node_modules\vue-property-decorator\LICENSE" />
+    <Content Include="node_modules\vue-property-decorator\package.json" />
+    <Content Include="node_modules\vue-property-decorator\README.md" />
+    <Content Include="node_modules\vue-class-component\LICENSE" />
+    <Content Include="node_modules\vue-class-component\package.json" />
+    <Content Include="node_modules\vue-class-component\README.md" />
+    <Content Include="node_modules\bootstrap-vue\CHANGELOG.md" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.common.js.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.common.min.js.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.css.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.esm.js.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.esm.min.js.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.js.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.min.css.map" />
+    <Content Include="node_modules\bootstrap-vue\dist\bootstrap-vue.min.js.map" />
+    <Content Include="node_modules\bootstrap-vue\LICENSE" />
+    <Content Include="node_modules\bootstrap-vue\package.json" />
+    <Content Include="node_modules\bootstrap-vue\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\alert\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\alert\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\badge\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\badge\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\breadcrumb\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-group\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-group\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-toolbar\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button-toolbar\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\button\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\card\_card-img.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\carousel\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\collapse\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\collapse\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\_dropdown-form.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\_dropdown-text.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\dropdown\_dropdown.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\embed\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\embed\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\_form-checkbox-group.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-checkbox\_form-checkbox.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-file\_form-file.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-group\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-group\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-input\_form-input.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\_form-radio-group.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-radio\_form-radio.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-select\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-select\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-textarea\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form-textarea\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\form\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\image\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\input-group\_input-group.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\jumbotron\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\jumbotron\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\layout\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\link\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\link\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\list-group\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\media\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\modal\_modal.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\navbar\_navbar.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\nav\_nav-item-dropdown.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination-nav\_pagination-nav.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\pagination\_pagination.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\popover\_popover.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\progress\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\spinner\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\spinner\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\table\_table.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tabs\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\_toast.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\_toaster-transition.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\toast\_toaster.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\components\tooltip\_tooltip.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\popover\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\popover\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\scrollspy\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\scrollspy\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\tooltip\package.json" />
+    <Content Include="node_modules\bootstrap-vue\src\directives\tooltip\README.md" />
+    <Content Include="node_modules\bootstrap-vue\src\index.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\_utilities.scss" />
+    <Content Include="node_modules\bootstrap-vue\src\_variables.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\bv-config.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\alert\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\badge\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\breadcrumb\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\button-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\button-toolbar\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\button\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\card\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\carousel\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\collapse\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\dropdown\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\embed\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-checkbox\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-file\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-input\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-radio\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-select\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form-textarea\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\form\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\image\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\input-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\jumbotron\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\layout\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\link\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\list-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\media\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\modal\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\navbar\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\nav\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\pagination-nav\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\pagination\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\popover\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\progress\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\spinner\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\table\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\tabs\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\toast\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\components\tooltip\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\directives\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\directives\modal\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\directives\popover\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\directives\scrollspy\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\directives\toggle\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\directives\tooltip\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\esm\vue-injections.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\bv-config.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\alert\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\badge\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\breadcrumb\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\button-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\button-toolbar\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\button\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\card\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\carousel\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\collapse\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\dropdown\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\embed\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-checkbox\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-file\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-input\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-radio\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-select\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form-textarea\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\form\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\image\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\input-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\jumbotron\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\layout\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\link\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\list-group\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\media\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\modal\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\navbar\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\nav\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\pagination-nav\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\pagination\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\popover\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\progress\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\spinner\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\table\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\tabs\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\toast\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\components\tooltip\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\directives\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\directives\modal\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\directives\popover\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\directives\scrollspy\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\directives\toggle\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\directives\tooltip\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\bootstrap-vue\src\vue-injections.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-class-component\lib\component.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-class-component\lib\data.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-class-component\lib\declarations.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-class-component\lib\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-class-component\lib\reflect.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-class-component\lib\util.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue-property-decorator\lib\vue-property-decorator.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue\types\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue\types\options.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue\types\plugin.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue\types\vnode.d.ts" />
+    <TypeScriptCompile Include="node_modules\vue\types\vue.d.ts" />
+    <TypeScriptCompile Include="Scripts\view\Home\index.ts" />
+    <TypeScriptCompile Include="Scripts\view\Home\model.ts" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <TypeScriptCompile Include="Scripts\view\Home\service.ts" />
+    <TypeScriptCompile Include="Scripts\view\Home\UserManagement.ts" />
+    <TypeScriptCompile Include="Scripts\view\Share\Interface.d.ts" />
+    <TypeScriptCompile Include="Scripts\view\Share\PublicFunction.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53439</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44330/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

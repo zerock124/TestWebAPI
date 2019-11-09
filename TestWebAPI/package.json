@@ -1,0 +1,23 @@
+{
+  "name": "TestWebAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/requirejs": "^2.1.31",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.4",
+    "requirejs": "^2.3.6",
+    "vue": "^2.6.10",
+    "vue-property-decorator": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.31"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

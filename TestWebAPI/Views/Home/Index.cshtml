@@ -1,0 +1,20 @@
+﻿
+<div id="v_app">
+    <user-management></user-management>
+</div>
+
+<template id="UserList">
+
+</template>
+
+@section Scripts {
+    <script>
+
+        requirejs.config({
+            baseUrl: "@Url.Content("~/Scripts/build/Home/")"
+        });
+
+        require(["index"]);
+
+    </script>
+}
