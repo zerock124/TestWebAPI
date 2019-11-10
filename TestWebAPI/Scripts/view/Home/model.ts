@@ -2,11 +2,20 @@
 import { AjaxReturn } from '../Share/PublicFunction';
 
 export interface IUserService {
-    /**
-     * 取得Excel匯入清單
-     * @param model
-     */
+
     UserList()
+        : JQuery.jqXHR<ResponseViewModel>
+
+    CreateUser(model: UserModel)
+        : JQuery.jqXHR<ResponseViewModel>
+
+    GetEditUser(Id: number)
+        : JQuery.jqXHR<ResponseViewModel>
+
+    EditUser(model: UserModel)
+        : JQuery.jqXHR<ResponseViewModel>
+
+    DeleteUser(Id)
         : JQuery.jqXHR<ResponseViewModel>
 
 }

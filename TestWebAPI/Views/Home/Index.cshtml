@@ -4,7 +4,136 @@
 </div>
 
 <template id="UserList">
+    <div>
+        <div class="row my-3 justify-content-center">
+            <b-card bg-variant="light">
+                <form action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <b-form-group label-cols-lg="3"
+                                  label="新增帳號"
+                                  label-size="lg"
+                                  label-class="font-weight-bold pt-0"
+                                  class="mb-0">
+                        <b-form-group label-cols-sm="3"
+                                      label="姓名:"
+                                      label-align-sm="right"
+                                      label-for="nested-street">
+                            <b-form-input id="nested-street" v-model="UserName"></b-form-input>
+                        </b-form-group>
 
+                        <b-form-group label-cols-sm="3"
+                                      label="電話:"
+                                      label-align-sm="right"
+                                      label-for="nested-city">
+                            <b-form-input id="nested-city" v-model="PhoneNumber"></b-form-input>
+                        </b-form-group>
+
+                        <b-form-group label-cols-sm="3"
+                                      label="地址:"
+                                      label-align-sm="right"
+                                      label-for="nested-state">
+                            <b-form-input id="nested-state" v-model="Address"></b-form-input>
+                        </b-form-group>
+
+                        <b-form-group label-cols-sm="3"
+                                      label="性別:"
+                                      label-align-sm="right" class="mb-0">
+                            <b-form-radio-group class="pt-2"
+                                                :options="['男', '女']"
+                                                v-model="Sex"></b-form-radio-group>
+                        </b-form-group>
+                    </b-form-group>
+                    <div class="text-right">
+                        <button class="btn btn-outline-info" v-on:click.prevent="CreateUser">新增帳號</button>
+                    </div>
+                </form>
+            </b-card>
+
+            <b-card bg-variant="light">
+                <form action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <b-form-group label-cols-lg="3"
+                                  label="新增帳號"
+                                  label-size="lg"
+                                  label-class="font-weight-bold pt-0"
+                                  class="mb-0">
+                        <b-form-group label-cols-sm="3"
+                                      label="姓名:"
+                                      label-align-sm="right"
+                                      label-for="nested-street">
+                            <b-form-input id="nested-street" v-model="EditUserName"></b-form-input>
+                        </b-form-group>
+
+                        <b-form-group label-cols-sm="3"
+                                      label="電話:"
+                                      label-align-sm="right"
+                                      label-for="nested-city">
+                            <b-form-input id="nested-city" v-model="EditPhoneNumber"></b-form-input>
+                        </b-form-group>
+
+                        <b-form-group label-cols-sm="3"
+                                      label="地址:"
+                                      label-align-sm="right"
+                                      label-for="nested-state">
+                            <b-form-input id="nested-state" v-model="EditAddress"></b-form-input>
+                        </b-form-group>
+
+                        <b-form-group label-cols-sm="3"
+                                      label="性別:"
+                                      label-align-sm="right" class="mb-0">
+                            <b-form-radio-group class="pt-2"
+                                                :options="['男', '女']"
+                                                v-model="EditSex"></b-form-radio-group>
+                        </b-form-group>
+                    </b-form-group>
+                    <div class="text-right">
+                        <button class="btn btn-outline-info" v-on:click.prevent="EditUserForm">更新帳號資料</button>
+                    </div>
+                </form>
+            </b-card>
+
+        </div>
+        <div class="row text-center">
+            <div class="col-1">編號</div>
+            <div class="col-2">姓名</div>
+            <div class="col-2">電話</div>
+            <div class="col-1">性別</div>
+            <div class="col-4">地址</div>
+            <div class="col-2">地址</div>
+        </div>
+        <div v-for="item in UserList"
+             keys="item.Id">
+            <user-list :user-data="item">
+            </user-list>
+        </div>
+
+        <b-modal id="editor-user"
+                 centered
+                 size="lg"
+                 :hide-header="true"
+                 :hide-footer="true"
+                 no-close-on-backdrop>
+            <user-edit></user-edit>
+        </b-modal>
+
+    </div>
+</template>
+
+<template id="UsetItem">
+    <div class="row text-center my-3">
+        <div class="col-1">{{ UserData.Id }}</div>
+        <div class="col-2">{{ UserData.UserName }}</div>
+        <div class="col-2">{{ UserData.PhonuNumber }}</div>
+        <div class="col-1">{{ UserData.Sex }}</div>
+        <div class="col-4">{{ UserData.Address }}</div>
+        <div class="col-2">
+            <button class="btn btn-outline-success" v-on:click.pervent="EditUser" key="UserData.Id">修改</button>
+            <button class="btn btn-outline-danger" v-on:click.pervent="DeleteUser">刪除</button>
+        </div>
+    </div>
+</template>
+
+<template id="EditUser">
+    <div>
+    </div>
 </template>
 
 @section Scripts {

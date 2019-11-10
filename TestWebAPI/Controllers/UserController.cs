@@ -21,6 +21,7 @@ namespace TestWebAPI.Controllers
         }
 
         // GET api/values
+        [HttpGet]
         public ResponseViewModel GetALL()
         {
             ResponseViewModel res = new ResponseViewModel();
@@ -42,6 +43,7 @@ namespace TestWebAPI.Controllers
         }
 
         // GET api/values/5
+        [HttpGet]
         public ResponseViewModel Get(int id)
         {
             ResponseViewModel res = new ResponseViewModel();
@@ -63,13 +65,19 @@ namespace TestWebAPI.Controllers
         }
 
         // POST api/values
-        public ResponseViewModel Post(Table value)
+        [HttpPost]
+        public ResponseViewModel Post(string UserName, string PhoneNumber, string Address, string Sex)
         {
             ResponseViewModel res = new ResponseViewModel();
+            Table user = new Table();
+            user.UserName = UserName;
+            user.PhonuNumber = PhoneNumber;
+            user.Address = Address;
+            user.Sex = Convert.ToInt32(Sex);
 
             try
             {
-                _user.Create(value);
+                _user.Create(user);
                 res.Success = true;
                 res.Message = "新增資料成功";
             }
@@ -83,7 +91,8 @@ namespace TestWebAPI.Controllers
         }
 
         // PUT api/values/5
-        public ResponseViewModel Put(int id, Table value)
+        [HttpPut]
+        public ResponseViewModel Put(int id)
         {
             ResponseViewModel res = new ResponseViewModel();
 
@@ -92,7 +101,7 @@ namespace TestWebAPI.Controllers
                 var data = _user.FindBy(x => x.Id == id);
                 if (data.Any())
                 {
-                    _user.Update(value);
+                    //_user.Update(value);
                     res.Success = true;
                     res.Message = "更新資料成功";
                 }
@@ -107,6 +116,7 @@ namespace TestWebAPI.Controllers
         }
 
         // DELETE api/values/5
+        [HttpDelete]
         public ResponseViewModel Delete(int id)
         {
             ResponseViewModel res = new ResponseViewModel();
